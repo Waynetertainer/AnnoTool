@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66036C50-F9C5-4853-84D3-1A990B3E1812}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Tracker</RootNamespace>
+    <AssemblyName>AnnoTool</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CollectionTemplate.xaml.cs">
+      <DependentUpon>CollectionTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerClasses.cs" />
+    <Page Include="CollectionTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IslandTab.cs" />
+    <Compile Include="LoadWindow.xaml.cs">
+      <DependentUpon>LoadWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\zoo\zoo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\zoo\zoo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\museum\museum1.png" />
+    <EmbeddedResource Include="Resources\museum\museum2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\botanic\botanic1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\zoo\Items\01Kondor.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\02Brillenbär.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\03Alpaka.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\04Braunbär.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\05Schwarzbär.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\06Elch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\07Kolponomos.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\08Megaloceros.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\09Schattenwolf.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\10Orka.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\11Schwertfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\12Weißer Hai.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\13Schwarzer Panther.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\14Amazonasdelfin.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\15Pelikan.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\16Weißer Tiger.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\17Albino-Fennek.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\18Baiji.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\19Axishirsch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\20Pfau.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\21Tiger.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\22Rind.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\23Huhn.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\24Ziege.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\25Großer Tümmler.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\26Seepferdchen.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\27Rotfeuerfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\28Jaguar.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\29Schwarzer Kaiman.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\30Iguaca.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\31Albino-Alligator.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\32Weißer Pfau.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\33Albino-Gorilla.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\34Elefant.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\35Krokodil.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\36Wilder Wasserbüffel.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\37Pferd.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\38Hausschwein.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\39Schaf.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\40Mantarochen.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\41Kugelfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\42Grüne Meeresschildkröte.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\43Drachenfisch der Tiefsee.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\44Unbekannter Leuchtfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\45Leuchtkalmar.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\46Rentier.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\47Moschusochse.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\48Polarwolf.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\49Grauhals-Kronenkranich.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\50Flusspferd.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\51Flamingo.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\52Dromedar.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\53Fennek.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\54Kaiserskorpion.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\55Der Krake.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\56Koboldhai.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\57Schwarzer Schlinger.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\58Narwal.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\59Polarfuchs.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\60Riesenalk.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\61Bartgeier.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\62Enbesanischer Wolf.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\63Zweihornchamäleon.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\64Grevyzebra.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\65Tüpfelhyäne.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\66Gnu.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\67Wildhund.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\68Impala.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\69Karakal.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\70Blobfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\71Kronenqualle.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\72Tiefsee-Anglerfisch.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\73Walross.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\74Polarbär.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\75Ringelrobbe.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\76Bergnyala.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\77Oryxantilope.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\78Dschelada.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\79Gepard.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\80Löwe.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\81Strauß.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\82Giraffe.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\83Elefant.png" />
+    <EmbeddedResource Include="Resources\zoo\Items\84Spitzmaulnashorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Zoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BotanischerGarten.png" />
+    <Resource Include="Resources\Museum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\museum\Items\01Minerva-Heiligtum.png" />
+    <EmbeddedResource Include="Resources\museum\Items\02Augustus-Forum.png" />
+    <EmbeddedResource Include="Resources\museum\Items\03Imperiumsadler-Mosaik.png" />
+    <EmbeddedResource Include="Resources\museum\Items\04Affenzahnamulett.png" />
+    <EmbeddedResource Include="Resources\museum\Items\05Juanita die Mumie.png" />
+    <EmbeddedResource Include="Resources\museum\Items\06Nazca Grab.png" />
+    <EmbeddedResource Include="Resources\museum\Items\07Neanderthaler-Skelett.png" />
+    <EmbeddedResource Include="Resources\museum\Items\08Altamira-Höhlenmalereien.png" />
+    <EmbeddedResource Include="Resources\museum\Items\09Höhlenmalereien von Valojoulx.png" />
+    <EmbeddedResource Include="Resources\museum\Items\10Barbarossas Knochen.png" />
+    <EmbeddedResource Include="Resources\museum\Items\11Verschollener Schatz von Ben Sahid.png" />
+    <EmbeddedResource Include="Resources\museum\Items\12Braunbarts Entermesser.png" />
+    <EmbeddedResource Include="Resources\museum\Items\13Die Ilias.png" />
+    <EmbeddedResource Include="Resources\museum\Items\14Die Odyssee.png" />
+    <EmbeddedResource Include="Resources\museum\Items\15Olympiatempel.png" />
+    <EmbeddedResource Include="Resources\museum\Items\16Takals Halskette.png" />
+    <EmbeddedResource Include="Resources\museum\Items\17Mesoanisches Haus.png" />
+    <EmbeddedResource Include="Resources\museum\Items\18Mesoanischer Hafen.png" />
+    <EmbeddedResource Include="Resources\museum\Items\19Walkürenhelm.png" />
+    <EmbeddedResource Include="Resources\museum\Items\20Saemundar-Edda.png" />
+    <EmbeddedResource Include="Resources\museum\Items\21Ring der Libenungen.png" />
+    <EmbeddedResource Include="Resources\museum\Items\22Ammoniten.png" />
+    <EmbeddedResource Include="Resources\museum\Items\23Tyrannosaurus Rex.png" />
+    <EmbeddedResource Include="Resources\museum\Items\24Stegosaurus.png" />
+    <EmbeddedResource Include="Resources\museum\Items\25Goidelischer Steinkreis.png" />
+    <EmbeddedResource Include="Resources\museum\Items\26Bron-Dolmen.png" />
+    <EmbeddedResource Include="Resources\museum\Items\27Menhire.png" />
+    <EmbeddedResource Include="Resources\museum\Items\28Tempel des Poseidon.png" />
+    <EmbeddedResource Include="Resources\museum\Items\29Dionysisches Mosaik.png" />
+    <EmbeddedResource Include="Resources\museum\Items\30Enosichthon-Statue.png" />
+    <EmbeddedResource Include="Resources\museum\Items\31Mesoanischer Tempel.png" />
+    <EmbeddedResource Include="Resources\museum\Items\32Mesoanische Glyphen.png" />
+    <EmbeddedResource Include="Resources\museum\Items\33Mesoansischer Kalender.png" />
+    <EmbeddedResource Include="Resources\museum\Items\34Altar von Uppsidaisi.png" />
+    <EmbeddedResource Include="Resources\museum\Items\35Drachenboot-Schnitzerei.png" />
+    <EmbeddedResource Include="Resources\museum\Items\36Heimskringala.png" />
+    <EmbeddedResource Include="Resources\museum\Items\37Apatosaurus.png" />
+    <EmbeddedResource Include="Resources\museum\Items\38Mosasaurus-Fossil.png" />
+    <EmbeddedResource Include="Resources\museum\Items\39Protoceratops-Eier.png" />
+    <EmbeddedResource Include="Resources\museum\Items\40Goidelischer Steinknoten.png" />
+    <EmbeddedResource Include="Resources\museum\Items\41Tara-Brosche.png" />
+    <EmbeddedResource Include="Resources\museum\Items\42Weißzahn, das Schwert von Rhydderch.png" />
+    <EmbeddedResource Include="Resources\museum\Items\43Admiral Nadaskys Säbel.png" />
+    <EmbeddedResource Include="Resources\museum\Items\44Imperiale Galionsfigur.png" />
+    <EmbeddedResource Include="Resources\museum\Items\45Nadaskys Orden.png" />
+    <EmbeddedResource Include="Resources\museum\Items\46Sammlung von Relikten der verschollenen Expedition.png" />
+    <EmbeddedResource Include="Resources\museum\Items\47Eingefrorenes Wollhaarmammut.png" />
+    <EmbeddedResource Include="Resources\museum\Items\48Wolfswelpen-Mumie.png" />
+    <EmbeddedResource Include="Resources\museum\Items\49Schmuck von Masu Masu.png" />
+    <EmbeddedResource Include="Resources\museum\Items\50Masus Mappa mundi.png" />
+    <EmbeddedResource Include="Resources\museum\Items\51Tambakto-Diorama.png" />
+    <EmbeddedResource Include="Resources\museum\Items\52Hor-Statue.png" />
+    <EmbeddedResource Include="Resources\museum\Items\53Statue von Anubis.png" />
+    <EmbeddedResource Include="Resources\museum\Items\54Tempel-von-Nafir-Diorama.png" />
+    <EmbeddedResource Include="Resources\museum\Items\55Mauer von Atlantis.png" />
+    <EmbeddedResource Include="Resources\museum\Items\56Tempel des Poseidon.png" />
+    <EmbeddedResource Include="Resources\museum\Items\57Gerichtshof.png" />
+    <EmbeddedResource Include="Resources\museum\Items\58Inunnguaq Inuksuk.png" />
+    <EmbeddedResource Include="Resources\museum\Items\59Igluit.png" />
+    <EmbeddedResource Include="Resources\museum\Items\60Pirujaqarvik Inuksuk.png" />
+    <EmbeddedResource Include="Resources\museum\Items\61Ring aus Rinder-Elfenbein.png" />
+    <EmbeddedResource Include="Resources\museum\Items\62Bemalte Maske.png" />
+    <EmbeddedResource Include="Resources\museum\Items\63Tierfigur.png" />
+    <EmbeddedResource Include="Resources\museum\Items\64Ruhm der Könige.png" />
+    <EmbeddedResource Include="Resources\museum\Items\65Löwe von Selamawi.png" />
+    <EmbeddedResource Include="Resources\museum\Items\66Arksum-Obelisk.png" />
+    <EmbeddedResource Include="Resources\museum\Items\67Oreichalkos-Statue.png" />
+    <EmbeddedResource Include="Resources\museum\Items\68Gipfel von Atlantis.png" />
+    <EmbeddedResource Include="Resources\museum\Items\69Atlantische Tafel.png" />
+    <EmbeddedResource Include="Resources\museum\Items\70Gemeißelter Steinbär.png" />
+    <EmbeddedResource Include="Resources\museum\Items\71Spielzeug-Quamutiik.png" />
+    <EmbeddedResource Include="Resources\museum\Items\72Uummannaq-Mumie.png" />
+    <EmbeddedResource Include="Resources\museum\Items\73Figur von Mutter und Kind.png" />
+    <EmbeddedResource Include="Resources\museum\Items\74Eindrucksvolle Terrakottafigur.png" />
+    <EmbeddedResource Include="Resources\museum\Items\75Verzierte Lehmfliese.png" />
+    <EmbeddedResource Include="Resources\museum\Items\76Die Bundeslade.png" />
+    <EmbeddedResource Include="Resources\museum\Items\77Ghebbi-Diorama.png" />
+    <EmbeddedResource Include="Resources\museum\Items\78Kidusisches Kirchen-Diorama.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\botanic\Items\01Guayacan de Manizales.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\02Espeletia.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\03Riesenbromelie.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\04Zweiblütiger Steinbrech.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\05Felsengebirgs-Tanne.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\06Schnee-Eukalyptus.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\07Seerose.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\08Schilfrohr.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\09Echter Eibisch.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\10Roter Fingerhut.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\11Löwenzahn.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\12Pfefferminze.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\13Kautschukbaum.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\14Riesenseerose.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\15Paranussbaum.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\16Steinkoralle.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\17Geweihkoralle.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\18Kokospalme.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\19Lotusblume %27Angel Wings%27.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\20Japanische Blütenkirsche.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\21Banyan-Feige.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\22Blaue Lotusblume.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\23Roter Tiegerlotus.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\24Rhododendron.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\25Amerikanische Lotusblume.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\26Ziziphus.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\27Indische Lotusblume.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\28Metaxya-Farn.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\29Rote Schlauchpflanze.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\30Affenleiter.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\31Königspalme.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\32Kandelaberkoralle.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\33Strandflieder.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\34Sternjasmin.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\35Champaka.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\36Indisches Basilikum.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\37Papyrus.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\38Wasserhyazinthe.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\39Ackerwinde.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\40Hanf.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\41Mohn.png" />
+    <EmbeddedResource Include="Resources\botanic\Items\42Wiesensalbei.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="Tracker.MainWindow"
+        x:Name="MainWindowInstance"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tracker"
+        mc:Ignorable="d"
+        FontFamily="Perpetua"
+        FontWeight="UltraBold"
+        Closing="ClosingAsk"
+        WindowStartupLocation="CenterScreen"
+        Title="Item Tracker" Height="372" Width="1020" ResizeMode="CanResizeWithGrip" SizeToContent="Height" MinWidth="850" MinHeight="620" 
+        Background="BurlyWood">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="islandInput" Grid.Column="0" Background="Wheat" Foreground="SaddleBrown" GotFocus="ClearInput" LostFocus="InputLostFocus">Neue Insel</TextBox>
+        <Button Style="{StaticResource GeneralButton}" x:Name="btnAdd" Grid.Column="1" Content="Insel hinzufügen" Click="btnAdd_Click"/>
+        <Button Style="{StaticResource GeneralButton}" x:Name="btnRemove" Grid.Column="2" Content="Insel entfernen" Click="btnRemove_Click"/>
+        <Button Style="{StaticResource GeneralButton}" x:Name="btnLoad" Grid.Column="3" Content="Laden" Click="Load_Click"/>
+        <Button Style="{StaticResource GeneralButton}" x:Name="btnSave" Grid.Column="4" Content="Speichern" Click="Save" IsEnabled="False"/>
+
+        <DockPanel Grid.Row="1" Grid.ColumnSpan="5" LastChildFill="True">
+            <TabControl  x:Name="IslandControl" Loaded="Load_Click" Background="BurlyWood"
+                         ClipToBounds="False">
+            </TabControl>
+        </DockPanel>
+
+    </Grid>
+</Window>
