@@ -50,6 +50,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>AnnoTool.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -146,7 +153,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\botanic\botanic1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icon.ico" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\zoo\Items\01Kondor.png" />
     <EmbeddedResource Include="Resources\zoo\Items\02Brillenbär.png" />
