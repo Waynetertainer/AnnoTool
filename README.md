@@ -20,7 +20,7 @@ This is a tool designed for the video game *Anno 1800* with the goal of providin
 The two elephants have the same icon and name. This is because I have only one icon and the two elephants have the same name in the German version of the game (Devs plz fix).
 The same name also applies for the two "Tempel des Poseidon" (Devs plz fix, too).
 
-## Deutsch
+## Deutsch:
 Dieses Tool dient dazu, dass man in *Anno 1800* einen guten Überblick über die gesammelten kulturellen Items hat.
 
 ### Nutzung:
